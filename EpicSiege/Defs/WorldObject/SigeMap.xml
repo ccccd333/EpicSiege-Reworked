@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<WorldObjectDef>
+		<defName>EpicSiegeCampSite</defName>
+
+		<expandMore>false</expandMore>
+		<canBePlayerHome>false</canBePlayerHome>
+		<selectable>false</selectable>
+
+		<worldObjectClass>EpicSiege.EpicSiegeCampSite</worldObjectClass>
+
+		<comps>
+			<li Class="WorldObjectCompProperties_Timeout" />
+			<li Class="WorldObjectCompProperties_FormCaravan" />
+			<li Class="WorldObjectCompProperties_TimedDetectionRaids" />
+			<li Class="EpicSiege.CompProperties_SiegeSiteTracker"/>
+		</comps>
+
+	</WorldObjectDef>
+
+</Defs>

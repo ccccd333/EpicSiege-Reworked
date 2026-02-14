@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<IncidentDef>
+		<defName>ESEpicSiegeIncident</defName>
+		<label>epic siege</label>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>SiegeIncident.IncidentWorker_SetUpSiegeCamp</workerClass>
+		<category>ThreatBig</category>
+		<baseChance>1</baseChance>
+		<minThreatPoints>1000</minThreatPoints>
+		<minPopulation>4</minPopulation>
+		<minRefireDays>30</minRefireDays>
+		<earliestDay>20</earliestDay>
+		<pointsScaleable>true</pointsScaleable>
+	</IncidentDef>
+</Defs>
