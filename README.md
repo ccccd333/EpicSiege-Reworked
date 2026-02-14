@@ -60,7 +60,7 @@ Error while deiniting map: could not notify things/regions/rooms/etc:
 
 これにより：
 
-- HarmonyPatch自体も正直重いのでそれがなくなる
+- HarmonyPatch作者さん自体も使わなくていいならできるだけ使わないで方針の遵守
 - 競合リスクの低減
 - より自然な RimWorld のライフサイクルに沿った実装
 
