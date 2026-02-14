@@ -3,10 +3,13 @@
 
 	<WorldObjectDef>
 		<defName>EpicSiegeCampSite</defName>
-
-		<expandMore>false</expandMore>
-		<canBePlayerHome>false</canBePlayerHome>
-		<selectable>false</selectable>
+        <texture>World/WorldObjects/Ambush</texture>
+        <expandingIcon>true</expandingIcon>
+        <expandingIconTexture>SiegeCamp/SiegeCamp</expandingIconTexture>
+        <expandingIconPriority>50</expandingIconPriority>
+        <expandMore>false</expandMore>
+        <canBePlayerHome>false</canBePlayerHome>
+        <selectable>false</selectable>
 
 		<worldObjectClass>EpicSiege.EpicSiegeCampSite</worldObjectClass>
 
