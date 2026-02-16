@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+	<!-- EN: Epic Siege -->
+	<ESM_EpicSiegeMod>Epic Siege</ESM_EpicSiegeMod>
+
+	<!-- EN: Alter Pollution Raid -->
+	<AlterPollutionRaidLabel>汚染襲撃の変更</AlterPollutionRaidLabel>
+	<!-- EN: This will replace the original pollution raid with an epic siege. -->
+	<AlterPollutionRaidDescription>これにより、元の汚染襲撃が大規模包囲に置き換えられます。</AlterPollutionRaidDescription>
+	<!-- EN: Alter Days Before Raid -->
+	<ESM_AlterDaysBeforeRaid>襲撃開始までの日数</ESM_AlterDaysBeforeRaid>
+	<!-- EN: Change how many days before the epic raid can occur. Default 1.5 -->
+	<ESM_AlterDaysBeforeRaidDescription>大規模襲撃の開始日数を変更します。デフォルトは1.5です。</ESM_AlterDaysBeforeRaidDescription>
+	<!-- EN: Raid Point Multiplier:  -->
+	<ESM_AdditionalMultiplier>襲撃ポイント乗数:</ESM_AdditionalMultiplier>
+	<!-- EN: Multiply the raid points. Default 1 (no multiplier) -->
+	<ESM_AdditionalMultiplierDescription>襲撃ポイントを乗算します。デフォルトは1(乗数なし)</ESM_AdditionalMultiplierDescription>
+	<ESM_RaidPhase1>襲撃フェーズ１</ESM_RaidPhase1>
+	<ESM_RaidPhase1Description>襲撃タイプを選択します(2=迫撃砲,1=壁破壊,0=即時襲撃)</ESM_RaidPhase1Description>
+	<ESM_RaidPhase2>襲撃フェーズ２</ESM_RaidPhase2>
+	<ESM_RaidPhase2Description>襲撃タイプを選択します(2=迫撃砲,1=壁破壊,0=即時襲撃)</ESM_RaidPhase2Description>
+	<ESM_RaidPhase3>襲撃フェーズ３</ESM_RaidPhase3>
+	<ESM_RaidPhase3Description>襲撃タイプを選択します(2=迫撃砲,1=壁破壊,0=即時襲撃)</ESM_RaidPhase3Description>
+	<ESM_SiegeType0>迫撃砲</ESM_SiegeType0>
+	<ESM_SiegeType1>壁破壊</ESM_SiegeType1>
+	<ESM_SiegeType2>即時襲撃</ESM_SiegeType2>
+	<ESM_CustomRaidPhases>
+襲撃タイプをカスタムします。
+注意:
+・襲撃時刻は、21600ticksを残り拠点数で等分した値になります。
+・襲撃フェーズ1～3と表示されますが、TPS依存のため必ずしも順番通りには発生しません。
+・IncidentのCategoryを変更するなどして同一Factionの拠点数が上限（3）を超えた場合、
+　襲撃時刻は21600ticks以内でランダムになります。
+	</ESM_CustomRaidPhases>
+
+</LanguageData>

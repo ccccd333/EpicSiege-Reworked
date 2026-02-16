@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Verse;
+using static Verse.HediffCompProperties_RandomizeSeverityPhases;
 
 namespace SiegeIncident
 {
@@ -18,6 +19,7 @@ namespace SiegeIncident
                 Log.Warning("IncidentWorker_SetUpSiegeCamp: No suitable enemy faction found.");
                 return false;
             }
+
             List<Site> list = new List<Site>();
             for (int i = 0; i < 3; i++)
             {
@@ -55,22 +57,23 @@ namespace SiegeIncident
 
         private static Site CreateSiegeCamp(int index, PlanetTile tile, Faction faction, float points)
         {
-            SitePartDef sitePartDef;
-            if (index != 0)
+            SitePartDef sitePartDef = null;
+
+            if (EpicSiegeMod.settings.customRaidPhases)
             {
-                if (index != 1)
-                {
-                    sitePartDef = ESDefOf.ESRaidCamp;
-                }
-                else
-                {
-                    sitePartDef = ESDefOf.ESBreachCamp;
-                }
+                sitePartDef = GetCustomRaidSitePartDef(index);
             }
             else
             {
-                sitePartDef = ESDefOf.ESMortarCamp;
+                sitePartDef = GetDefaultRaidSitePartDef(index);
             }
+
+            if (sitePartDef == null)
+            {
+                Log.Error("IncidentWorker_SetUpSiegeCamp: Invalid site part definition for index " + index);
+                return null;
+            }
+
             Site site = SiteMaker.MakeSite(sitePartDef, tile, faction, true, new float?(points), ESDefOf.EpicSiegeCampSite);
             site.sitePartsKnown = true;
             int num = Mathf.RoundToInt(60000f * EpicSiegeMod.settings.alterDaysBeforeRaid);
@@ -109,6 +112,51 @@ namespace SiegeIncident
         protected override bool CanFireNowSub(IncidentParms parms)
         {
             return base.CanFireNowSub(parms) && Find.AnyPlayerHomeMap != null;
+        }
+
+        private static SitePartDef GetCustomRaidSitePartDef(int phase) 
+        {
+            switch (phase)
+            {
+                case 0:
+                    return MapPhaseTypeToSitePartDef(EpicSiegeMod.settings.raidPhase1);
+                case 1:
+                    return MapPhaseTypeToSitePartDef(EpicSiegeMod.settings.raidPhase2);
+                case 2:
+                    return MapPhaseTypeToSitePartDef(EpicSiegeMod.settings.raidPhase3);
+                default:
+                    return null;
+            }
+        }
+
+        private static SitePartDef GetDefaultRaidSitePartDef(int phase)
+        {
+            switch (phase)
+            {
+                case 0:
+                    return ESDefOf.ESMortarCamp;
+                case 1:
+                    return ESDefOf.ESBreachCamp;
+                case 2:
+                    return ESDefOf.ESRaidCamp;
+                default:
+                    return null;
+            }
+        }
+
+        private static SitePartDef MapPhaseTypeToSitePartDef(int phaseType)
+        {
+            switch (phaseType)
+            {
+                case 0:
+                    return ESDefOf.ESRaidCamp;
+                case 1:
+                    return ESDefOf.ESBreachCamp;
+                case 2:
+                    return ESDefOf.ESMortarCamp;
+                default:
+                    return null;
+            }
         }
 
         private const int MaxDist = 5;

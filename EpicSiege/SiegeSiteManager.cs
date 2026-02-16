@@ -68,7 +68,26 @@ namespace EpicSiege
 
         }
 
-        private static int CountRemainingSitesForFaction(Faction faction)
+        public static void RemoveSite(Site site)
+        {
+            Comp_SiegeSiteTracker keyToRemove = null;
+
+            foreach (var pair in registeredSites)
+            {
+                if (pair.Key.parent is Site s && s == site)
+                {
+                    keyToRemove = pair.Key;
+                    break;
+                }
+            }
+
+            if (keyToRemove != null)
+            {
+                registeredSites.Remove(keyToRemove);
+            }
+        }
+
+        public static int CountRemainingSitesForFaction(Faction faction)
         {
             int count = 0;
 

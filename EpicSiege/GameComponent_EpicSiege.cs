@@ -16,7 +16,7 @@ namespace EpicSiege
 
         public override void FinalizeInit()
         {
-            SiegeSiteManager.Debug();
+            //SiegeSiteManager.Debug();
         }
     }
 }

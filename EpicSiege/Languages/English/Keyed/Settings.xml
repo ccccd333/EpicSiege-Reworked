@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<ESM_EpicSiegeMod>Epic Siege</ESM_EpicSiegeMod>
+
+	<AlterPollutionRaidLabel>Alter Pollution Raid</AlterPollutionRaidLabel>
+	<AlterPollutionRaidDescription>This will replace the original pollution raid with an epic siege.</AlterPollutionRaidDescription>
+	<ESM_AlterDaysBeforeRaid>Alter Days Before Raid</ESM_AlterDaysBeforeRaid>
+	<ESM_AlterDaysBeforeRaidDescription>Change how many days before the epic raid can occur. Default 1.5</ESM_AlterDaysBeforeRaidDescription>
+	<ESM_AdditionalMultiplier>Raid Point Multiplier: </ESM_AdditionalMultiplier>
+	<ESM_AdditionalMultiplierDescription>Multiply the raid points. Default 1 (no multiplier)</ESM_AdditionalMultiplierDescription>
+	<ESM_RaidPhase1>Raid Phase 1</ESM_RaidPhase1>
+	<ESM_RaidPhase1Description>Select the raid type (2 = Mortar siege, 1 = Breach assault, 0 = Immediate raid)</ESM_RaidPhase1Description>
+
+	<ESM_RaidPhase2>Raid Phase 2</ESM_RaidPhase2>
+	<ESM_RaidPhase2Description>Select the raid type (2 = Mortar siege, 1 = Breach assault, 0 = Immediate raid)</ESM_RaidPhase2Description>
+
+	<ESM_RaidPhase3>Raid Phase 3</ESM_RaidPhase3>
+	<ESM_RaidPhase3Description>Select the raid type (2 = Mortar siege, 1 = Breach assault, 0 = Immediate raid)</ESM_RaidPhase3Description>
+
+	<ESM_SiegeType0>Mortar siege</ESM_SiegeType0>
+	<ESM_SiegeType1>Breach assault</ESM_SiegeType1>
+	<ESM_SiegeType2>Immediate raid</ESM_SiegeType2>
+
+	<ESM_CustomRaidPhases>
+Customize raid phases.
+Warning:
+• Raid timing is determined by dividing 21600 ticks by the number of remaining sites.
+• Although labeled as Raid Phase 1–3, they may not occur in order due to TPS dependency.
+• If the number of sites for the same faction exceeds the limit (3), such as by changing the Incident category,
+　the raid timing will be randomized within 21600 ticks.
+	</ESM_CustomRaidPhases>
+
+
+</LanguageData>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	<!--Parent Camp-->
+	<ESSiegeCamp.description>由另一個陣營建立起來的營地，他們正在準備正對你的襲擊。</ESSiegeCamp.description>
+	<ESSiegeCamp.arrivedLetter>一個都不能放過，殺！ 殺！ 殺！</ESSiegeCamp.arrivedLetter>
+	
+	<!--Children Camps-->
+	<ESMortarCamp.label>迫擊炮營地</ESMortarCamp.label>
+	<ESMortarCamp.description>由另一個陣營建立起來的營地，他們正在準備正對你發動圍攻。</ESMortarCamp.description>
+		<MortarCamp.arrivedLetter>這下我們沒法繳獲他們的迫擊炮和生存食品了。</ESMortarCamp.arrivedLetter>
+	
+	<ESBreachCamp.label>破牆營地</ESBreachCamp.label>
+	<ESBreachCamp.description>由另一個陣營建立起來的營地，他們正在準備正對你的破牆襲擊。</ESBreachCamp.description>
+		<BreachCamp.arrivedLetter>破牆襲擊沒有一個是無辜的，殺！ 殺！ 殺！</ESBreachCamp.arrivedLetter>
+	
+	<ESRaidCamp.label>襲擊營地</ESRaidCamp.label>
+	<ESRaidCamp.description>由另一個陣營建立起來的營地，他們正在準備正對你的襲擊。</ESRaidCamp.description>
+		<ESRaidCamp.arrivedLetter>是時候先發制人了。</ESRaidCamp.arrivedLetter>
+
+</LanguageData>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+	<!--Incident-->
+	<!-- EN: epic siege -->
+  <EpicSiegeName>大規模包囲</EpicSiegeName>
+    <!-- EN: The raiders from -->
+  <EpicSiegeDescription1>襲撃者、</EpicSiegeDescription1>
+	<!-- EN: have set up three siege camps, they will send three raids to you after {0} days. -->
+  <EpicSiegeDescription2>が3つの包囲陣地を設置しており、彼らは{0}日後に、3回の襲撃を入植地へ仕掛けてきます。</EpicSiegeDescription2>
+	<!-- EN: Destroy 2 of them to stop the siege. -->
+  <EpicSiegeDescription3>包囲を止めるには2つの陣地を破壊する必要があります。</EpicSiegeDescription3>
+
+	<!--first camp destroyed-->
+	<!-- EN: camp destroyed -->
+  <CampDestroyedName>陣地が破壊された</CampDestroyedName>
+	<!-- EN: One more to go. -->
+  <CampDestroyedDescription>残りはあと1ヶ所です。</CampDestroyedDescription>
+	
+	<!--second camp destroyed-->
+	<!-- EN: tactical retreat -->
+  <RetreatName>戦術的撤退</RetreatName>
+	<!-- EN:  lost too many forces during the siege preparation, they have to retreat. -->
+  <RetreatText>包囲準備中にあまりにも多くの兵力を失ったため、彼らは撤退せざるを得なくなりました。</RetreatText>
+	
+	<!--diplomacy consequence-->
+	<!-- EN: diplomatic outcome: peace talks -->
+  <OutcomeName>外交的成果: 和平交渉</OutcomeName>
+	<!-- EN: has suffered from great losses, they have recognized your strength and agreed to peace talks. -->
+  <OutcomeText>大きな損失を被りましたが、彼らはあなたの強さを認め、和平交渉に同意しました。</OutcomeText>
+
+	<!-- EN: Leader executed -->
+  <executeLeaderLabel>リーダーが処刑された</executeLeaderLabel>
+	<!-- EN: , the leader of the  -->
+  <executeLeaderText1>、その指導者である</executeLeaderText1>
+	<!-- EN:  has been overthrown and executed due to the failure of the operation. \n The devil is now gone and your colonists cheer for their success. -->
+  <executeLeaderText2>は作戦の失敗を理由に失脚し、処刑されました。\n悪魔は今や消え去り、あなたの入植者たちは成功を祝っています。</executeLeaderText2>
+
+</LanguageData>
