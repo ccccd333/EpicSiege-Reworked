@@ -1,0 +1,59 @@
+
+ver1.0.2
+[Bug Fixes]
+
+Fixed an issue where the cache was not properly cleared when the enemy site was not destroyed within the time limit.
+
+Fixed an issue where, if one enemy site was destroyed but the remaining sites were not cleared in time, a raid would still occur and peace negotiations or enemy leader execution would be triggered incorrectly.
+
+[New Feature]
+
+Some race/faction mods do not define certain raid types (for example, siege raids).
+To support these mods, you can now customize raid phases in the mod settings, including setting all phases to immediate raids only.
+
+[Behavior / Mechanics]
+
+If you eliminate all enemies at an enemy site but remain there without leaving, the site will not be destroyed. The raid will instead trigger when you leave the site.
+
+This is because the system treats it as a timeout condition.
+
+There may be ways to change this, but it is currently treated as intended behavior.
+
+This behavior is inherited from the original EpicSiege.
+
+If you reduce the number of enemy sites to two, and another EpicSiege incident occurs, the total number of sites may increase (for example, to five).
+
+After destroying three of them, you may receive a letter stating that only one site remains.
+
+Destroying one more site will also destroy the final remaining site automatically (this is normal behavior).
+This occurs because additional sites were added during the event chain.
+
+If a raid is triggered before leaving your current location via a gravship, the raid will not occur because the player’s location has changed.
+
+[About Spawn Probability]
+
+If the incident occurs too rarely, you can increase its probability by editing:
+Incident_EpicSiege.xml
+
+Setting:
+
+baseChance = 5
+
+
+will result in approximately a 19% chance in a vanilla environment.
+
+Alternatively, you can make it much more common by setting:
+
+category = Misc
+baseChance = 2
+
+
+This is because the ThreatBig category is heavily contested by other faction mods.
+
+Category examples:
+
+ThreatBig ← Raids, Sieges, Clusters
+
+ThreatSmall ← Small combat events
+
+Misc ← Neutral / miscellaneous events
