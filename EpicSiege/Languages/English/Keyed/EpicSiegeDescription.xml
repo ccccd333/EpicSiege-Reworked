@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	<!--Incident-->
+	<EpicSiegeName>epic siege</EpicSiegeName>
+    <EpicSiegeDescription1>The raiders from</EpicSiegeDescription1>
+	<EpicSiegeDescription2>have set up three siege camps, they will send three raids to you after {0} days.</EpicSiegeDescription2>
+	<EpicSiegeDescription3>Destroy 2 of them to stop the siege.</EpicSiegeDescription3>
+
+	<!--first camp destroyed-->
+	<CampDestroyedName>camp destroyed</CampDestroyedName>
+	<CampDestroyedDescription>One more to go.</CampDestroyedDescription>
+	
+	<!--second camp destroyed-->
+	<RetreatName>tactical retreat</RetreatName>
+	<RetreatText> lost too many forces during the siege preparation, they have to retreat.</RetreatText>
+	
+	<!--diplomacy consequence-->
+	<OutcomeName>diplomatic outcome: peace talks</OutcomeName>
+	<OutcomeText>has suffered from great losses, they have recognized your strength and agreed to peace talks.</OutcomeText>
+
+	<executeLeaderLabel>Leader executed</executeLeaderLabel>
+	<executeLeaderText1>, the leader of the </executeLeaderText1>
+	<executeLeaderText2> has been overthrown and executed due to the failure of the operation. \n The devil is now gone and your colonists cheer for their success.</executeLeaderText2>
+
+</LanguageData>

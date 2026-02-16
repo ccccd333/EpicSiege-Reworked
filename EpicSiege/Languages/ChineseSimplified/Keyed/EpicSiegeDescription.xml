@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	<!--Incidnet-->
+	<EpicSiegeName>史诗攻城</EpicSiegeName>
+    <EpicSiegeDescription1>来自</EpicSiegeDescription1>
+	<EpicSiegeDescription2>的敌人已经建立起了攻城营地，他们会在{0}天内发动三次进攻。</EpicSiegeDescription2>
+	<EpicSiegeDescription3>我们需要摧毁两个营地来阻止他们的进攻</EpicSiegeDescription3>
+
+	<!--first camp destroyed-->
+	<CampDestroyedName>营地被摧毁</CampDestroyedName>
+	<CampDestroyedDescription>还剩一个</CampDestroyedDescription>
+	
+	<!--second camp destroyed-->
+	<RetreatName>战术撤退</RetreatName>
+	<RetreatText>损失了太多兵力，他们不得不撤退</RetreatText>
+	
+	<!--diplomacy consequence-->
+	<OutcomeName>外交影响：谈判</OutcomeName>
+	<OutcomeText>在此次准备中损失了太多兵力，他们不得不承认我们的地位并同意进行谈判。</OutcomeText>
+
+	<!--leader executed-->
+	<executeLeaderLabel>首领被处决</executeLeaderLabel>
+	<executeLeaderText1>,</executeLeaderText1>
+	<executeLeaderText2>的首领，被手下推翻并处决。\n殖民者们很高兴看到敌人的首领得到了应有的下场。</executeLeaderText2>
+
+</LanguageData>

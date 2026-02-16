@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<ESM_EpicSiegeMod>史诗般的围攻</ESM_EpicSiegeMod>
+
+	<AlterPollutionRaidLabel>改变污染报复袭击</AlterPollutionRaidLabel>
+	<AlterPollutionRaidDescription>这条设置会用史诗攻城替换原版的污染报复袭击</AlterPollutionRaidDescription>
+	
+	<ESM_AlterDaysBeforeRaid>改变攻城准备时间</ESM_AlterDaysBeforeRaid>
+	<ESM_AlterDaysBeforeRaidDescription>更改史诗级突袭发生前的天数。</ESM_AlterDaysBeforeRaidDescription>
+
+
+	<ESM_AdditionalMultiplier>突袭积分乘数</ESM_AdditionalMultiplier>
+	<ESM_AdditionalMultiplierDescription>乘以突袭点数。默认 1 （无乘数）</ESM_AdditionalMultiplierDescription>
+	<ESM_RaidPhase1>袭击阶段 1</ESM_RaidPhase1>
+	<ESM_RaidPhase1Description>选择袭击类型（2 = 迫击炮围攻，1 = 破墙突袭，0 = 即时袭击）</ESM_RaidPhase1Description>
+
+	<ESM_RaidPhase2>袭击阶段 2</ESM_RaidPhase2>
+	<ESM_RaidPhase2Description>选择袭击类型（2 = 迫击炮围攻，1 = 破墙突袭，0 = 即时袭击）</ESM_RaidPhase2Description>
+
+	<ESM_RaidPhase3>袭击阶段 3</ESM_RaidPhase3>
+	<ESM_RaidPhase3Description>选择袭击类型（2 = 迫击炮围攻，1 = 破墙突袭，0 = 即时袭击）</ESM_RaidPhase3Description>
+
+	<ESM_SiegeType0>迫击炮围攻</ESM_SiegeType0>
+	<ESM_SiegeType1>破墙突袭</ESM_SiegeType1>
+	<ESM_SiegeType2>即时袭击</ESM_SiegeType2>
+
+	<ESM_CustomRaidPhases>
+自定义袭击阶段。
+注意：
+・袭击时间将根据剩余据点数量，将 21600 ticks 等分后决定。
+・虽然显示为袭击阶段 1～3，但由于 TPS 影响，不一定按顺序发生。
+・如果通过修改 Incident 类别等方式，使同一派系的据点数量超过上限（3），
+则袭击时间将在 21600 ticks 内随机决定。
+	</ESM_CustomRaidPhases>
+</LanguageData>

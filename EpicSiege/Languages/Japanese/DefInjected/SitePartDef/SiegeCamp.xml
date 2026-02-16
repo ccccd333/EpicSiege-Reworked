@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Breach Camp -->
+  <ESBreachCamp.label>突撃陣地</ESBreachCamp.label>
+  <!-- EN: A siege camp built by another faction. It will expire in time and send a raid to you. -->
+  <ESBreachCamp.description>他派閥によって築かれた包囲陣地。時間が経つと消滅し、その派閥の襲撃部隊が送り込まれます。</ESBreachCamp.description>
+  <!-- EN: Attacking {0} -->
+  <ESBreachCamp.approachingReportString>{0}を攻撃中</ESBreachCamp.approachingReportString>
+  <!-- EN: Attack {0} -->
+  <ESBreachCamp.approachOrderString>{0}を攻撃</ESBreachCamp.approachOrderString>
+  <!-- EN: Now they can no longer breach your walls. -->
+  <ESBreachCamp.arrivedLetter>敵に壁を破られる心配はもうしなくてよさそうだ。</ESBreachCamp.arrivedLetter>
+  
+  <!-- EN: Mortar Camp -->
+  <ESMortarCamp.label>迫撃砲陣地</ESMortarCamp.label>
+  <!-- EN: A siege camp built by another faction. It will expire in time and send a raid to you. -->
+  <ESMortarCamp.description>他派閥によって築かれた包囲陣地。時間が経つと消滅し、その派閥の襲撃部隊が送り込まれます。</ESMortarCamp.description>
+  <!-- EN: Attacking {0} -->
+  <ESMortarCamp.approachingReportString>{0}を攻撃中</ESMortarCamp.approachingReportString>
+  <!-- EN: Attack {0} -->
+  <ESMortarCamp.approachOrderString>{0}を攻撃</ESMortarCamp.approachOrderString>
+  <!-- EN: Teach those cowards a lesson! -->
+  <ESMortarCamp.arrivedLetter>あの腰抜けどもに一泡吹かせてやれ!</ESMortarCamp.arrivedLetter>
+  
+  <!-- EN: Raid Camp -->
+  <ESRaidCamp.label>襲撃陣地</ESRaidCamp.label>
+  <!-- EN: A siege camp built by another faction. It will expire in time and send a siege to you. -->
+  <ESRaidCamp.description>他派閥によって築かれた包囲陣地。時間が経つと消滅し、その派閥の襲撃部隊が送り込まれます。</ESRaidCamp.description>
+  <!-- EN: Attacking {0} -->
+  <ESRaidCamp.approachingReportString>{0}を攻撃中</ESRaidCamp.approachingReportString>
+  <!-- EN: Attack {0} -->
+  <ESRaidCamp.approachOrderString>{0}を攻撃</ESRaidCamp.approachOrderString>
+  <!-- EN: You know what to do. -->
+  <ESRaidCamp.arrivedLetter>やるべきことは分かっているはずだ。</ESRaidCamp.arrivedLetter>
+  
+  <!-- EN: A siege camp built by another faction. It will expire in time and send a raid to you. -->
+  <ESSiegeCamp.description>他派閥によって築かれた包囲陣地。時間が経つと消滅し、その派閥の襲撃部隊が送り込まれます。</ESSiegeCamp.description>
+  <!-- EN: Attacking {0} -->
+  <ESSiegeCamp.approachingReportString>{0}を攻撃中</ESSiegeCamp.approachingReportString>
+  <!-- EN: Attack {0} -->
+  <ESSiegeCamp.approachOrderString>{0}を攻撃</ESSiegeCamp.approachOrderString>
+  <!-- EN: Teach those raiders a lesson! -->
+  <ESSiegeCamp.arrivedLetter>あの襲撃者どもに一泡吹かせてやれ!</ESSiegeCamp.arrivedLetter>
+  
+</LanguageData>

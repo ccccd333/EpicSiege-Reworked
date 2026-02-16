@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	<!--Parent Camp-->
+	<ESSiegeCamp.description>A siege camp built by another faction. It will expire in time and send a raid to you.</ESSiegeCamp.description>
+	<ESSiegeCamp.arrivedLetter>Teach those raiders a lesson!</ESSiegeCamp.arrivedLetter>
+
+	<!--Children Camps-->
+	<ESMortarCamp.label>Mortar Camp</ESMortarCamp.label>
+	<ESMortarCamp.description>A siege camp built by another faction. It will expire in time and send a raid to you.</ESMortarCamp.description>
+	<ESMortarCamp.arrivedLetter>Teach those cowards a lesson!</ESMortarCamp.arrivedLetter>
+
+	<ESBreachCamp.label>Breach Camp</ESBreachCamp.label>
+	<ESBreachCamp.description>A siege camp built by another faction. It will expire in time and send a raid to you.</ESBreachCamp.description>
+	<ESBreachCamp.arrivedLetter>Now they can no longer damage your walls.</ESBreachCamp.arrivedLetter>
+
+	<ESRaidCamp.label>Raid Camp</ESRaidCamp.label>
+	<ESRaidCamp.description>A siege camp built by another faction. It will expire in time and send a raid to you.</ESRaidCamp.description>
+	<ESRaidCamp.arrivedLetter>You know what to do.</ESRaidCamp.arrivedLetter>
+
+</LanguageData>

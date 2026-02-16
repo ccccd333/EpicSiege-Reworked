@@ -3,6 +3,7 @@ using RimWorld.Planet;
 using RimWorld.QuestGen;
 using System;
 using System.Linq;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using Verse;
 
@@ -30,6 +31,7 @@ namespace EpicSiege
             // これならCompsでPostDestroyタイミングでもいいが、
             // 将来マップ内容を消す前に何かする場合を見てここに書いておく
 
+            //Log.Message($"[EpicSiege] Notify_MyMapAboutToBeRemoved called for {this}. Checking for hostile threats.");
             if (!GenHostility.AnyHostileActiveThreatToPlayer(Map, true, false))
             {
                 HandleCampCleared();
@@ -39,6 +41,7 @@ namespace EpicSiege
 
         public override void Destroy()
         {
+            //Log.Message($"[EpicSiege] Destroying {this}. Checking for retaliation raid conditions.");
             try
             {
                 TriggerRetaliationRaidIfFailed();
@@ -47,15 +50,26 @@ namespace EpicSiege
             {
                 Log.Error($"[EpicSiege]An error occurred after the timeout or when destroying the base. Please report it. wt?{e}");
             }
+            SiegeSiteManager.RemoveSite(this);
+            //SiegeSiteManager.Debug();
 
             base.Destroy();
         }
 
         private void HandleCampCleared()
         {
+            if (!IsClearedOnTime() || !HasPlayerHome())
+            {
+                // プレイヤーポーンが時間切れで拠点破棄タイミングで、拠点へ入り
+                // 時間切れで拠点破棄が起きた際、clearResultが0で敵ポーンの処刑か和平交渉が始まってしまう
+                // そのため、タイム切れもしくはプレイヤー拠点が無くなった場合はここで処理を止める。
+                return;
+            }
+
             int clearResult;
-            
+
             SiegeSiteManager.NotifySiteCleared(this, out clearResult);
+
             if (clearResult == 2)
             {
                 EpicSiegeLetterUtility.SendCampDestroyedLetter();
@@ -116,18 +130,28 @@ namespace EpicSiege
 
         }
 
-        private void TriggerRetaliationRaidIfFailed()
+        private bool IsClearedOnTime()
         {
             TimeoutComp timeout = GetComponent<TimeoutComp>();
+            return timeout != null && timeout.TicksLeft > 0;
+        }
 
+        private bool HasPlayerHome()
+        {
+            //Log.Message($"[EpicSiege] Checking for player home map. Found: {Find.AnyPlayerHomeMap != null}");
+            return Find.AnyPlayerHomeMap != null;
+        }
+
+        private void TriggerRetaliationRaidIfFailed()
+        {
             // 敵拠点を時間内にクリアした
-            if (timeout != null && timeout.TicksLeft > 0)
+            if (IsClearedOnTime())
                 return;
 
             Map playerHome = Find.AnyPlayerHomeMap;
 
             // 襲撃するプレイヤーホームがない
-            if (playerHome == null)
+            if (!HasPlayerHome())
             {
                 SiegeSiteManager.DestroyAliveSigeSiteFaction(this);
                 return;
@@ -171,12 +195,42 @@ namespace EpicSiege
 
         private int GetRaidDelay()
         {
-            SitePartDef partDef = parts.FirstOrDefault()?.def;
+            if (EpicSiegeMod.settings.customRaidPhases)
+            {
+                const int MaxSites = 3;
+                // remainingSites = 1～3 
+                int remainingSites = SiegeSiteManager.CountRemainingSitesForFaction(this.Faction);
 
-            if (partDef == ESDefOf.ESMortarCamp) return 1000;
-            if (partDef == ESDefOf.ESBreachCamp) return 10800;
+                // 3を超えたら1～3にランダム化
+                // これは、現在Site(this)をキーとして、Factionが一緒かでカウントしている
+                // ThreatBigのRaidは被ることはないので最大3でいいが、
+                // 被った際にはランダム化しておく
+                if (remainingSites > MaxSites)
+                {
+                    remainingSites = Rand.RangeInclusive(1, MaxSites);
+                }
 
-            return 21600;
+                int destroyedSiteCount = (MaxSites + 1) - remainingSites;
+                destroyedSiteCount = Mathf.Clamp(destroyedSiteCount, 1, MaxSites);
+
+                int ticksPerPhase = 21600 / MaxSites; // 7200 ticks
+                int ticks = ticksPerPhase * destroyedSiteCount;
+
+                //Log.Message($"[EpicSiege] Custom raid phases enabled. Remaining sites for faction {this.Faction.Name}: {remainingSites} destroyedSiteCount: {destroyedSiteCount} ticks: {ticks}");
+
+                return ticks;
+            }
+            else
+            {
+                SitePartDef partDef = parts.FirstOrDefault()?.def;
+
+                if (partDef == ESDefOf.ESMortarCamp) return 1000;
+                if (partDef == ESDefOf.ESBreachCamp) return 10800;
+
+                return 21600;
+            }
+
+            
         }
 
 
