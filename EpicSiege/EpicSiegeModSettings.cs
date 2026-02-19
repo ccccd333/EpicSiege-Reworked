@@ -15,6 +15,15 @@ namespace EpicSiege
             Scribe_Values.Look<int>(ref this.raidPhase3, "raidPhase3", 0, false);
 
             Scribe_Values.Look<bool>(ref this.customRaidPhases, "customRaidPhases", false, false);
+
+            Scribe_Values.Look<bool>(ref enableCategoryOverride, "enableCategoryOverride", false);
+            Scribe_Values.Look<int>(ref selectedCategoryIndex, "selectedCategoryIndex", 1, false);
+
+            Scribe_Values.Look<float>(ref baseChance, "baseChance", 1f, false);
+            Scribe_Values.Look<float>(ref minThreatPoints, "minThreatPoints", 1000f, false);
+            Scribe_Values.Look<int>(ref this.minPopulation, "minPopulation", 4, false);
+            Scribe_Values.Look<int>(ref this.minRefireDays, "minRefireDays", 30, false);
+            Scribe_Values.Look<int>(ref this.earliestDay, "earliestDay", 20, false);
             base.ExposeData();
         }
 
@@ -33,5 +42,15 @@ namespace EpicSiege
         public int raidPhase3 = 0;
 
         public bool customRaidPhases = false;
+
+        public bool enableCategoryOverride = false;
+
+        // 0=ThreatSmall, 1=ThreatBig, 2=Misc
+        public int selectedCategoryIndex = 1;
+        public float baseChance = 1f;
+        public float minThreatPoints = 1000f;
+        public int minPopulation = 4;
+        public int minRefireDays = 30;
+        public int earliestDay = 20;
     }
 }

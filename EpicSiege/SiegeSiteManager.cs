@@ -11,20 +11,15 @@ namespace EpicSiege
         private static readonly Dictionary<Comp_SiegeSiteTracker, Site> registeredSites 
             = new Dictionary<Comp_SiegeSiteTracker, Site>();
 
+        public static IReadOnlyDictionary<Comp_SiegeSiteTracker, Site> RegisteredSites
+            => registeredSites;
+
         private static bool shouldClearCache = true;
 
         public static bool ShouldClearCache
         {
             get => shouldClearCache;
             set => shouldClearCache = value;
-        }
-
-        public static void Debug()
-        {
-            foreach (var comp in registeredSites.Keys)
-            {
-                Log.Message($"[EpicSiege] Registered siege site ==>{comp}");
-            }
         }
 
         public static void ClearAll()

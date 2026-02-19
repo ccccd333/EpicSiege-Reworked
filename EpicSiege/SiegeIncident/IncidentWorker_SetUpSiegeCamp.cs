@@ -20,6 +20,8 @@ namespace SiegeIncident
                 return false;
             }
 
+            //Log.Message($"forced={parms.forced}, Target={parms.target}, StoryState.Target={parms.target.StoryState.Target}, points={parms.points}");
+
             List<Site> list = new List<Site>();
             for (int i = 0; i < 3; i++)
             {
@@ -30,7 +32,15 @@ namespace SiegeIncident
                 }
                 else
                 {
-                    parms.forced = true;
+                    // ここ元MODからforced=trueで記述していた。
+                    // このタイミングのforcedはストーリーテラー側でインシデントが発生したことも記録しない
+                    // これはインシデントそのものの発生条件としてはいい。
+                    // ただ、インシデントの現状を考慮した発生条件としては不適切。
+                    // そのためincidentDefの記述のMinRefireDays(インシデントが発生して30日経過したか)などを無視する。
+                    // ここに書くべきではない
+                    //parms.forced = true;
+
+
                     Site site = IncidentWorker_SetUpSiegeCamp.CreateSiegeCamp(i, planetTile, this.enemy, parms.points);
                     if (site == null)
                     {
@@ -52,6 +62,8 @@ namespace SiegeIncident
             Letter letter = LetterMaker.MakeLetter("EpicSiegeName".Translate(), taggedString, LetterDefOf.ThreatBig, this.enemy, null);
             letter.lookTargets = list.FirstOrDefault<Site>();
             Find.LetterStack.ReceiveLetter(letter, null, 0, true);
+            EpicSiegeDebugUtility.DebugLogCallStack("IncidentWorker_SetUpSiegeCamp: Successfully set up siege camps. Call stack:");
+            //Log.Message($"IncidentWorker_SetUpSiegeCamp: Successfully set up {list.Count} siege camps for faction {this.enemy.Name}.");
             return true;
         }
 

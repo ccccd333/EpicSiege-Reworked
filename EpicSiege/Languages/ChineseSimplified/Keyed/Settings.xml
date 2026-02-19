@@ -21,16 +21,76 @@
 	<ESM_RaidPhase3>袭击阶段 3</ESM_RaidPhase3>
 	<ESM_RaidPhase3Description>选择袭击类型（2 = 迫击炮围攻，1 = 破墙突袭，0 = 即时袭击）</ESM_RaidPhase3Description>
 
+	<ESM_IncidentDefCategoryOverride>
+【编辑 IncidentDef 的类别和 BaseChance】
+要使这些更改生效，请在此界面编辑后重新加载游戏或开始新游戏。
+
+什么是类别？：指 ThreatBig、ThreatSmall、Misc 等。事件会在所选类别内进行选择。
+
+类别说明：
+ThreatBig：大型威胁事件（例如虫族袭击。由于包含MOD事件，竞争较多，并且在周期上较不容易被选中。）
+ThreatSmall：小型威胁事件（原版主要是动物狂暴，因此竞争较少，但整体发生频率较低。）
+Misc：其他事件（例如灵能无人机、热浪等，竞争较多，但在周期上更容易被选中。）
+
+如果你希望该事件较为频繁发生，建议设置为 Misc，BaseChance 约为 3。
+如果只希望偶尔发生，建议设置为 ThreatBig，BaseChance 约为 4。
+
+由于MOD数量会影响选择概率，如果事件难以触发，请尝试提高 BaseChance。
+
+至于 BaseChance 提高到多少对应怎样的概率，
+虽然根据环境不同可能需要较长时间，但官方提供了可用于采样的调试功能。
+
+■ 确认发生概率的方法（官方调试功能）
+1. 加载一个已进行一段时间的存档
+2. 启用开发者模式
+3. 打开 “Open debug action menu”
+4. 点击 “Output” → “Incident chances sampled”
+
+在 DefName 列中会显示 “ESEpicSiegeIncident”，
+该行的 “fire chance” 即为采样得到的实际发生概率。
+
+■ 确认是否可以发生的方法
+同样可以在调试菜单中的 “Incident chances” 查看。
+
+在 DefName 列找到 “ESEpicSiegeIncident”，
+如果 “can fire” 被勾选，则表示当前条件下可以发生。
+	</ESM_IncidentDefCategoryOverride>
+
+	<ESM_IncidentConditions>【编辑事件发生条件】</ESM_IncidentConditions>
+
+	<ESM_SelectedIncidentCategory>选定的事件类别：</ESM_SelectedIncidentCategory>
+
+	<ESM_IncidentCategoryThreatSmall>ThreatSmall</ESM_IncidentCategoryThreatSmall>
+	<ESM_IncidentCategoryThreatBig>ThreatBig</ESM_IncidentCategoryThreatBig>
+	<ESM_IncidentCategoryMisc>Misc</ESM_IncidentCategoryMisc>
+
+	<ESM_IncidentBaseChance>基础概率（权重）：</ESM_IncidentBaseChance>
+
+	<ESM_CategoryThreatSmall>ThreatSmall</ESM_CategoryThreatSmall>
+	<ESM_CategoryThreatBig>ThreatBig</ESM_CategoryThreatBig>
+	<ESM_CategoryMisc>Misc</ESM_CategoryMisc>
+
+	<ESM_IncidentMinThreatPoints>最低威胁点数：</ESM_IncidentMinThreatPoints>
+
+	<ESM_MinPopulation>最低殖民者数量：</ESM_MinPopulation>
+
+	<ESM_MinRefireDays>最小再次触发间隔（天）：</ESM_MinRefireDays>
+
+	<ESM_EarliestDay>最早触发天数（从游戏开始计算）：</ESM_EarliestDay>
+
 	<ESM_SiegeType0>迫击炮围攻</ESM_SiegeType0>
 	<ESM_SiegeType1>破墙突袭</ESM_SiegeType1>
 	<ESM_SiegeType2>即时袭击</ESM_SiegeType2>
 
 	<ESM_CustomRaidPhases>
-自定义袭击阶段。
+【自定义袭击行为】
+
 注意：
-・袭击时间将根据剩余据点数量，将 21600 ticks 等分后决定。
-・虽然显示为袭击阶段 1～3，但由于 TPS 影响，不一定按顺序发生。
-・如果通过修改 Incident 类别等方式，使同一派系的据点数量超过上限（3），
-则袭击时间将在 21600 ticks 内随机决定。
+• 袭击时间通过将 21,600 ticks 按剩余敌方基地数量平均分配计算。
+• 袭击阶段显示为 Phase 1–3，但由于受 TPS 影响，不一定严格按顺序发生。
+• 如果通过更改 Incident 类别等方式，使同一派系的基地数量超过上限（3），
+袭击时间将在 21,600 ticks 内随机决定。
+• 根据MOD种族不同，可能不存在破墙袭击。
+因此提供了将所有袭击设为立即发生的选项。
 	</ESM_CustomRaidPhases>
 </LanguageData>
