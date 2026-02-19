@@ -62,7 +62,7 @@ namespace SiegeIncident
             Letter letter = LetterMaker.MakeLetter("EpicSiegeName".Translate(), taggedString, LetterDefOf.ThreatBig, this.enemy, null);
             letter.lookTargets = list.FirstOrDefault<Site>();
             Find.LetterStack.ReceiveLetter(letter, null, 0, true);
-            EpicSiegeDebugUtility.DebugLogCallStack("IncidentWorker_SetUpSiegeCamp: Successfully set up siege camps. Call stack:");
+            //EpicSiegeDebugUtility.DebugLogCallStack("IncidentWorker_SetUpSiegeCamp: Successfully set up siege camps. Call stack:");
             //Log.Message($"IncidentWorker_SetUpSiegeCamp: Successfully set up {list.Count} siege camps for faction {this.enemy.Name}.");
             return true;
         }
