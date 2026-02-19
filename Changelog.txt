@@ -1,3 +1,15 @@
+ver1.0.3
+[Bug Fix]
+A bug inherited from the original EpicSiege has been identified and fixed.
+Specifically, when the incident fires, the IncidentWorker_SetUpSiegeCamp.TryExecuteWorker method (defined in the worker class associated with the IncidentDef) was being called with parms.forced = true.
+
+As a result, when the storyteller later calls Notify_IncidentFired, the storyteller does not properly record the incident’s last fire time. This causes an issue where, even if <minRefireDays>30</minRefireDays> is defined in the IncidentDef, the incident may occur again without waiting the intended 30 days.
+
+Since the original author is no longer available, the original intention behind setting parms.forced = true is unknown. However, this behavior negatively affects the intended functionality (preventing EpicSiege incidents from occurring again within 30 days), and there is no functional requirement for EpicSiege to run with forced = true. Therefore, this has been removed.
+
+[New Feature]
+
+Added a feature that allows IncidentDef settings to be modified in-game.
 
 ver1.0.2
 [Bug Fixes]
