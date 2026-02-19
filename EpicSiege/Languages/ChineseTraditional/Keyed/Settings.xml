@@ -24,13 +24,73 @@
 	<ESM_SiegeType1>破牆突襲</ESM_SiegeType1>
 	<ESM_SiegeType2>即時襲擊</ESM_SiegeType2>
 
+	<ESM_IncidentDefCategoryOverride>
+【編輯 IncidentDef 的類別與 BaseChance】
+要使這些變更生效，請在此畫面編輯後重新載入遊戲或開始新遊戲。
+
+什麼是類別？：指 ThreatBig、ThreatSmall、Misc 等。事件會在所選類別內進行選擇。
+
+類別說明：
+ThreatBig：大型威脅事件（例如蟲族襲擊。由於包含 MOD 事件，競爭較多，且在週期上較不容易被選中。）
+ThreatSmall：小型威脅事件（原版主要為動物狂暴，因此競爭較少，但整體發生頻率較低。）
+Misc：其他事件（例如靈能無人機、熱浪等，競爭較多，但在週期上較容易被選中。）
+
+如果你希望該事件較頻繁發生，建議設為 Misc，BaseChance 約為 3。
+如果只希望偶爾發生，建議設為 ThreatBig，BaseChance 約為 4。
+
+由於 MOD 數量會影響選擇機率，如果事件難以觸發，請嘗試提高 BaseChance。
+
+至於 BaseChance 提高到多少會對應怎樣的機率，
+雖然依環境不同可能需要較長時間，但官方提供了可用於取樣的除錯功能。
+
+■ 確認發生機率的方法（官方除錯功能）
+1. 載入一個已進行一段時間的存檔
+2. 啟用開發者模式
+3. 開啟「Open debug action menu」
+4. 點擊「Output」→「Incident chances sampled」
+
+在 DefName 欄位中會顯示「ESEpicSiegeIncident」，
+該行的「fire chance」即為取樣得到的實際發生機率。
+
+■ 確認是否可發生的方法
+同樣可在除錯選單中的「Incident chances」查看。
+
+在 DefName 欄位找到「ESEpicSiegeIncident」，
+如果「can fire」被勾選，則表示目前條件下可以發生。
+	</ESM_IncidentDefCategoryOverride>
+
+	<ESM_IncidentConditions>【編輯事件發生條件】</ESM_IncidentConditions>
+
+	<ESM_SelectedIncidentCategory>選擇的事件類別：</ESM_SelectedIncidentCategory>
+
+	<ESM_IncidentCategoryThreatSmall>ThreatSmall</ESM_IncidentCategoryThreatSmall>
+	<ESM_IncidentCategoryThreatBig>ThreatBig</ESM_IncidentCategoryThreatBig>
+	<ESM_IncidentCategoryMisc>Misc</ESM_IncidentCategoryMisc>
+
+	<ESM_IncidentBaseChance>基礎機率（權重）：</ESM_IncidentBaseChance>
+
+	<ESM_CategoryThreatSmall>ThreatSmall</ESM_CategoryThreatSmall>
+	<ESM_CategoryThreatBig>ThreatBig</ESM_CategoryThreatBig>
+	<ESM_CategoryMisc>Misc</ESM_CategoryMisc>
+
+	<ESM_IncidentMinThreatPoints>最低威脅點數：</ESM_IncidentMinThreatPoints>
+
+	<ESM_MinPopulation>最低殖民者人數：</ESM_MinPopulation>
+
+	<ESM_MinRefireDays>最小再次觸發間隔（天）：</ESM_MinRefireDays>
+
+	<ESM_EarliestDay>最早觸發天數（自遊戲開始計算）：</ESM_EarliestDay>
+
 	<ESM_CustomRaidPhases>
-自訂襲擊階段。
+【自訂襲擊行為】
+
 注意：
-・襲擊時間將以 21600 ticks 除以剩餘據點數後決定。
-・雖然標示為襲擊階段 1～3，但由於 TPS 影響，不一定會依序發生。
-・若因修改 Incident 類別等原因，導致同一陣營的據點數超過上限（3），
-則襲擊時間將在 21600 ticks 內隨機決定。
+• 襲擊時間會將 21,600 ticks 依剩餘敵方據點數量平均分配計算。
+• 襲擊階段顯示為 Phase 1–3，但由於受 TPS 影響，不一定會依序發生。
+• 如果透過變更 Incident 類別等方式，使同一派系的據點數量超過上限（3），
+襲擊時間將會在 21,600 ticks 內隨機決定。
+• 根據 MOD 種族不同，可能不存在破牆襲擊。
+因此提供將所有襲擊設為立即發生的選項。
 	</ESM_CustomRaidPhases>
 
 

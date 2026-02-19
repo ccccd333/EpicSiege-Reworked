@@ -28,7 +28,7 @@ namespace EpicSiege
             // 敵がいる状態でそのまま敵拠点から出ていきましたの場合もここに来る
             // そのため敵対的なポーンがいないか判定する必要がある
 
-            // これならCompsでPostDestroyタイミングでもいいが、
+            // これならDestroy()のタイミングでもいいが、
             // 将来マップ内容を消す前に何かする場合を見てここに書いておく
 
             //Log.Message($"[EpicSiege] Notify_MyMapAboutToBeRemoved called for {this}. Checking for hostile threats.");
@@ -146,7 +146,10 @@ namespace EpicSiege
         {
             // 敵拠点を時間内にクリアした
             if (IsClearedOnTime())
+            {
+                //Log.Message($"[EpicSiege] Camp cleared on time. No retaliation raid will be triggered.");
                 return;
+            }
 
             Map playerHome = Find.AnyPlayerHomeMap;
 

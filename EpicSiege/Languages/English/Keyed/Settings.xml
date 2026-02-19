@@ -22,13 +22,73 @@
 	<ESM_SiegeType1>Breach assault</ESM_SiegeType1>
 	<ESM_SiegeType2>Immediate raid</ESM_SiegeType2>
 
+	<ESM_IncidentDefCategoryOverride>
+[Edit IncidentDef category and BaseChance]
+To apply these changes, you must reload the game or start a new game after editing on this screen.
+
+What is a category?: ThreatBig, ThreatSmall, Misc, etc. Events are selected from within their category.
+
+Meaning:
+ThreatBig: Large-scale threats (major raids, insect infestations, and many modded threats. These compete heavily and are selected less frequently due to the event cycle.)
+ThreatSmall: Small-scale threats (in vanilla mostly manhunter animals, so there is less competition. However, they occur less often due to the cycle.)
+Misc: Other events (psychic drones, heat waves, etc. These compete more but are selected more frequently in the cycle.)
+
+If you want this event to occur occasionally, set it to Misc with a BaseChance of around 3.
+If you want it to occur only rarely, set it to ThreatBig with a BaseChance of around 4.
+
+Since this depends on your mod environment, if the event is not occurring often enough, try increasing the BaseChance.
+
+To see how BaseChance affects the actual selection probability, RimWorld provides an official debug option that allows you to sample incident chances in your current environment.
+
+■ How to check actual fire chance (official debug feature)
+1. Load a save that has progressed to some extent
+2. Enable Development Mode
+3. Open debug action menu
+4. Select "Output" → "Incident chances sampled"
+
+Look for "ESEpicSiegeIncident" in the DefName column.
+The "fire chance" value in that row is the sampled probability.
+
+■ How to check whether the incident can currently fire
+You can also check this in "Incident chances" in the debug menu.
+
+If "can fire" is checked in the row for "ESEpicSiegeIncident",
+then the incident can currently occur under the present conditions.
+	</ESM_IncidentDefCategoryOverride>
+
+	<ESM_IncidentConditions>[Edit incident firing conditions]</ESM_IncidentConditions>
+
+	<ESM_SelectedIncidentCategory>Selected incident category: </ESM_SelectedIncidentCategory>
+
+	<ESM_IncidentCategoryThreatSmall>ThreatSmall</ESM_IncidentCategoryThreatSmall>
+	<ESM_IncidentCategoryThreatBig>ThreatBig</ESM_IncidentCategoryThreatBig>
+	<ESM_IncidentCategoryMisc>Misc</ESM_IncidentCategoryMisc>
+
+	<ESM_IncidentBaseChance>  Base chance (weight): </ESM_IncidentBaseChance>
+
+	<ESM_CategoryThreatSmall>ThreatSmall</ESM_CategoryThreatSmall>
+	<ESM_CategoryThreatBig>ThreatBig</ESM_CategoryThreatBig>
+	<ESM_CategoryMisc>Misc</ESM_CategoryMisc>
+
+	<ESM_IncidentMinThreatPoints>  Minimum threat points: </ESM_IncidentMinThreatPoints>
+
+	<ESM_MinPopulation>  Minimum colony population: </ESM_MinPopulation>
+
+	<ESM_MinRefireDays>  Minimum refire interval (days): </ESM_MinRefireDays>
+
+	<ESM_EarliestDay>  Days before incident becomes available (since game start): </ESM_EarliestDay>
+
+
 	<ESM_CustomRaidPhases>
-Customize raid phases.
-Warning:
-• Raid timing is determined by dividing 21600 ticks by the number of remaining sites.
-• Although labeled as Raid Phase 1–3, they may not occur in order due to TPS dependency.
-• If the number of sites for the same faction exceeds the limit (3), such as by changing the Incident category,
-　the raid timing will be randomized within 21600 ticks.
+[Custom raid behavior]
+
+Note:
+• Raid timing is calculated by dividing 21,600 ticks by the number of remaining enemy bases.
+• Raid phases are displayed as Phase 1–3, but due to TPS dependency, they may not always occur in exact order.
+• If the number of bases belonging to the same faction exceeds the limit (3), for example by changing the Incident category,
+raid timing will be randomized within 21,600 ticks.
+• Depending on modded races, breaching raids may not be available.
+For this reason, there is an option to make all raids occur immediately.
 	</ESM_CustomRaidPhases>
 
 
