@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<SitePartDef Name="ESSiegeCamp">
+		<defName>ESSiegeCamp</defName>
+		<description>A siege camp built by another faction. It will expire in time and send a raid to you.</description>
+		<gravShipsCanLandOn>false</gravShipsCanLandOn>
+		<siteTexture>World/WorldObjects/Sites/Outpost</siteTexture>
+		<expandingIconTexture>SiegeCamp/SiegeCamp</expandingIconTexture>
+		<applyFactionColorToSiteTexture>true</applyFactionColorToSiteTexture>
+		<showFactionInInspectString>true</showFactionInInspectString>
+		<requiresFaction>true</requiresFaction>
+		<approachOrderString>Attack {0}</approachOrderString>
+		<approachingReportString>Attacking {0}</approachingReportString>
+		<arrivedLetter>Teach those raiders a lesson!</arrivedLetter>
+		<arrivedLetterDef>NegativeEvent</arrivedLetterDef>
+		<wantsThreatPoints>true</wantsThreatPoints>
+		<minThreatPoints>1000</minThreatPoints>
+		<tags>
+			<li>SiegeCamp</li>
+		</tags>
+	</SitePartDef>
+	
+	<SitePartDef ParentName="ESSiegeCamp">
+		<defName>ESMortarCamp</defName>
+		<label>Mortar Camp</label>
+		<workerClass>EpicSiege.SitePartWorker_SiegeCamp</workerClass>
+		<description>A siege camp built by another faction. It will expire in time and send a raid to you.</description>
+		<arrivedLetter>Teach those cowards a lesson!</arrivedLetter>
+	</SitePartDef>
+	<!--GenSteps-->
+	<GenStepDef>
+		<defName>ESMortarCamp_Outpost</defName>
+		<linkWithSite>ESMortarCamp</linkWithSite>
+		<order>450</order>
+		<genStep Class="GenStep_Outpost">
+			<allowGeneratingThronerooms>false</allowGeneratingThronerooms>
+			<settlementDontGeneratePawns>false</settlementDontGeneratePawns>
+			<allowGeneratingFarms>false</allowGeneratingFarms>
+			<generateLoot>false</generateLoot>
+		</genStep>
+	</GenStepDef>
+	<GenStepDef>
+		<defName>ESMortarCamp_OutpostPower</defName>
+		<linkWithSite>ESMortarCamp</linkWithSite>
+		<order>451</order>
+		<genStep Class="GenStep_Power"/>
+	</GenStepDef>
+
+	<SitePartDef ParentName="ESSiegeCamp">
+		<defName>ESBreachCamp</defName>
+		<label>Breach Camp</label>
+		<workerClass>EpicSiege.SitePartWorker_SiegeCamp</workerClass>
+		<description>A siege camp built by another faction. It will expire in time and send a raid to you.</description>
+		<arrivedLetter>Now they can no longer breach your walls.</arrivedLetter>
+	</SitePartDef>
+	<!--GenSteps-->
+	<GenStepDef>
+		<defName>ESBreachCamp_Outpost</defName>
+		<linkWithSite>ESBreachCamp</linkWithSite>
+		<order>450</order>
+		<genStep Class="GenStep_Outpost">
+			<allowGeneratingThronerooms>false</allowGeneratingThronerooms>
+			<settlementDontGeneratePawns>false</settlementDontGeneratePawns>
+			<allowGeneratingFarms>false</allowGeneratingFarms>
+			<generateLoot>false</generateLoot>
+		</genStep>
+	</GenStepDef>
+	<GenStepDef>
+		<defName>ESBreachCamp_OutpostPower</defName>
+		<linkWithSite>ESBreachCamp</linkWithSite>
+		<order>451</order>
+		<genStep Class="GenStep_Power"/>
+	</GenStepDef>
+
+	<SitePartDef ParentName="ESSiegeCamp">
+		<defName>ESRaidCamp</defName>
+		<label>Raid Camp</label>
+		<workerClass>EpicSiege.SitePartWorker_SiegeCamp</workerClass>
+		<description>A siege camp built by another faction. It will expire in time and send a siege to you.</description>
+		<arrivedLetter>You know what to do.</arrivedLetter>
+	</SitePartDef>
+	<!--GenSteps-->
+	<GenStepDef>
+		<defName>ESRaidCamp_Outpost</defName>
+		<linkWithSite>ESRaidCamp</linkWithSite>
+		<order>450</order>
+		<genStep Class="GenStep_Outpost">
+			<allowGeneratingThronerooms>false</allowGeneratingThronerooms>
+			<settlementDontGeneratePawns>false</settlementDontGeneratePawns>
+			<allowGeneratingFarms>false</allowGeneratingFarms>
+			<generateLoot>false</generateLoot>
+		</genStep>
+	</GenStepDef>
+	<GenStepDef>
+		<defName>ESRaidCamp_OutpostPower</defName>
+		<linkWithSite>ESRaidCamp</linkWithSite>
+		<order>451</order>
+		<genStep Class="GenStep_Power"/>
+	</GenStepDef>
+
+</Defs>

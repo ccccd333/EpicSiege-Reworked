@@ -1,0 +1,6 @@
+1.0.0 - 3/5/2025 - updated from 1.4 to 1.5
+
+1.0.1 - 2/14/2026 - Large-scale refactor by ノッシコンコンキツネ, thank you!
+
+1.0.2 - 6/8/2026 - more fixes by ノッシコンコンキツネ, thank you
+
